@@ -54,9 +54,5 @@ class NoteListView(ListView):
     def get(self, request, *args, **kwargs):
         self.object_list = self.get_queryset()
         return JsonResponse(
-            {
-                'notes': [
-                    {'id': object.id, 'created': object.created, 'text': object.text} for object in self.object_list
-                ]
-            }
+            {'notes': [{'id': note.id, 'created': note.created, 'text': note.text} for note in self.object_list]}
         )
