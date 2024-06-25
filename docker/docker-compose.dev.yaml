@@ -1,0 +1,9 @@
+services:
+  clays_backend_dev_db:
+    image: postgres:16
+    restart: always
+    ports:
+      - "5200:5432"
+    environment:
+      - POSTGRES_DB=clays_backend_dev_db
+      - POSTGRES_PASSWORD=password

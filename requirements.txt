@@ -1,0 +1,7 @@
+django==5.0.6
+psycopg2-binary==2.9.9
+
+# tests
+black==24.4.2
+isort==5.13.2
+dirty-equals==0.7.1
