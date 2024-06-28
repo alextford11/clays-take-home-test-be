@@ -73,11 +73,11 @@ WSGI_APPLICATION = 'clays_take_home_test.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'USER': 'postgres',
-        'PASSWORD': 'password',
-        'NAME': 'clays_backend_dev_db',
-        'HOST': 'localhost',
-        'PORT': '5200',
+        'USER': os.getenv('POSTGRES_USER', 'postgres'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'password'),
+        'NAME': os.getenv('POSTGRES_DB', 'clays_backend_dev_db'),
+        'HOST': os.getenv('POSTGRES_HOST', 'localhost'),
+        'PORT': os.getenv('POSTGRES_PORT', '5200'),
     },
     'test': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
